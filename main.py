@@ -49,9 +49,11 @@ def update():
 	exit()
 	
 def main():
-	print("hello main")
+	print("main.py started")
 #	addToStartUp("main.py")
-	update()
+	a=int(input("update (1)?"))
+	if a==1:
+		update()
 if __name__ == "__main__":
 	main()
 
