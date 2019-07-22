@@ -1,5 +1,7 @@
+import os
 import git
 from git import Repo
+import subprocess
 
 def main():
 	os.system("rmdir /s /Q updates")
