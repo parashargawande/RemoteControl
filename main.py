@@ -49,7 +49,7 @@ def update():
 	exit()
 	
 def main():
-	print("main.py started")
+	print("updated main.py started")
 #	addToStartUp("main.py")
 	a=int(input("update (1)?"))
 	if a==1:
