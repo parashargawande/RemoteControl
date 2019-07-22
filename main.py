@@ -43,10 +43,11 @@ def Testing():
 	except:
 		print("error")
 def update():
-	os.system("rmdir /s /Q updates")
-	os.system("mkdir updates")
-	Repo.clone_from("https://github.com/parashargawande/RemoteControl.git", "updates")
-		
+	os.system("move updates.py updating.py")
+	updateCommand="python updating.py"
+	proc = subprocess.Popen('start cmd /k %s' % updateCommand, shell=True)
+	exit()
+	
 def main():
 	print("hello main")
 #	addToStartUp("main.py")
