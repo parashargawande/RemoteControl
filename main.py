@@ -1,3 +1,4 @@
+# updated file
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
@@ -5,7 +6,9 @@ import os,json
 import signal,time
 import subprocess
 import getpass
-
+import time
+import git
+from git import Repo
 
 global email
 global NotificationFlag
@@ -27,9 +30,27 @@ def addToStartUp(filename):
 	os.system('copy "%s" "%s"' %(filename,bat_path) )
 
 def updateSelf():
-	
+	updateCommand="echo updating the project"
+	proc = subprocess.Popen('start cmd /k %s' % updateCommand, shell=True)
+
+def Testing():
+	proc = subprocess.Popen("start cmd", shell=True)
+	time.sleep(5)
+	pid=os.getpid()
+	print(pid)
+	try:
+		subprocess.call(['taskkill', '/F', '/T', '/PID',  str(pid)])
+	except:
+		print("error")
+def update():
+	os.system("rmdir /s updates")
+	os.system("mkdir updates")
+	Repo.clone_from("https://github.com/parashargawande/RemoteControl.git", "updates")
+		
 def main():
 	print("hello main")
-	addToStartUp("main.py")
+#	addToStartUp("main.py")
+	update()
 if __name__ == "__main__":
 	main()
+
