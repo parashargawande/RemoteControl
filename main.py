@@ -43,7 +43,7 @@ def Testing():
 	except:
 		print("error")
 def update():
-	os.system("rmdir /s updates")
+	os.system("rmdir /s /Q updates")
 	os.system("mkdir updates")
 	Repo.clone_from("https://github.com/parashargawande/RemoteControl.git", "updates")
 		
